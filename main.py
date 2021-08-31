@@ -8,12 +8,17 @@ apikey = os.environ.get("apikey")
 
 url_base = "http://www.omdbapi.com/?apikey="
 
-url = url_base + apikey + "&i=tt3896198"
+title = input("Movie Name: ")
+title = title.replace(" ", "_")
 
-print(url)
+url = url_base + apikey + "&t=" + title
 
 r = requests.get(url)
 json_data = r.json()
 
 for key, value in json_data.items():
     print(key + ':', value)
+
+print(json_data['imdbRating'])
+
+
