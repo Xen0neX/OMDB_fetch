@@ -16,8 +16,9 @@ url = url_base + apikey + "&t=" + title
 r = requests.get(url)
 json_data = r.json()
 
-for key, value in json_data.items():
-    print(key + ':', value)
+#If you want to print all the data recieved from the API call
+#for key, value in json_data.items():
+#    print(key + ':', value)
 
 print(json_data['imdbRating'])
 
